@@ -60,9 +60,11 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
+			// slidesPerView: 'auto', // Чтобы слайдер сам не указывал ширину слайдам. Будем управлять в стилях.
 			spaceBetween: 0,
 			autoHeight: true,
 			speed: 800,
+			parallax: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,

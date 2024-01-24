@@ -77,8 +77,8 @@ function initSliders() {
 			//},
 			// Arrows
 			navigation: {
-				nextEl: '.about__more .more__item_next',
-				prevEl: '.about__more .more__item_prev',
+				nextEl: '.slider-rooms .slider-arrow_next',
+				prevEl: '.slider-rooms .slider-arrow_prev',
 			},
 			/*
 			breakpoints: {

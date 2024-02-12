@@ -1,19 +1,278 @@
-.pagging {
+// Хлебные крошки ===============================================================================================================================================
+.breadcrumbs {
+	white-space: nowrap;
+	overflow: auto;
+	margin: 0 -15px;
+	padding: 0 15px;
+	display: flex;
+}
+
+.breadcrumbs::-webkit-scrollbar {
+	display: none;
+}
+
+.breadcrumbs::-webkit-scrollbar-thumb {
+	display: none;
+}
+
+.breadcrumbs__list {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	// .pagging__arrow
-	&__arrow {
-	}
-	// .pagging__list
-	&__list {
+
+	.breadcrumbs__item {
 		display: flex;
-		li {
+		align-items: center;
+		&::after{
+			content:''; 
+			width: 10px;
+			height: 1px;
+			margin: 0 10px;
+			background: rgba(2, 0, 32, 0.5);
+			opacity: 0.7;
+		}
+		&:last-child{
+			&::after {
+				display: none;
+			}
 		}
 	}
-	// .pagging__item
-	&__item {
-		&._active {
+
+	.breadcrumbs__link {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: 0em;
+		color: rgba(2, 0, 32, 0.5);
+		text-decoration: none;
+		white-space: nowrap;
+		// margin: 0 5px;
+		transition: $mainTransition;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:hover {
+			color: #221F20;
+		}
+		@media (max-width: 480px){
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	.breadcrumbs__current {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: 0em;
+		color: $mainColor;
+		// margin-left: 5px;
+		white-space: nowrap;
+		@media (max-width: 480px){
+			font-size: 12px;
+			line-height: 16px;
 		}
 	}
 }
+//========================================================================================================================================================
+
+.pagging {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pagging__arrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	flex: 0 0 rem(20);
+	width: rem(20);
+	height: rem(20);
+	background: #F0F2F8;
+	&::before{
+		font-size: rem(8);
+	}
+}
+.pagging__list {
+	display: flex;
+	align-items: center;
+}
+.pagging__item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: rem(16);
+	font-weight: 400;
+	line-height: math.div(22, 16);
+	letter-spacing: 0em;
+	flex: 0 0 rem(20);
+	width: rem(20);
+	height: rem(20);
+	margin: 0 rem(10) 0 rem(10);
+	transition: $mainTransition;
+
+	@media (max-width: 540px){
+		font-size: rem(14);
+		margin: 0 rem(3) 0 rem(3);
+	}
+
+	@media (any-hover: hover) {
+	&:hover {
+		background: #F0F2F8;
+	}
+	}
+	&._active {
+		background: #F0F2F8;
+	}
+}
+
+
+
+// // Хлебные крошки ===============================================================================================================================================
+// #breadcrumbs {
+//   margin-bottom: 40px; }
+
+// #breadcrumbs ul {
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -ms-flex-wrap: wrap;
+//   flex-wrap: wrap; }
+
+// #breadcrumbs span {
+//   font-size: 14px;
+//   font-weight: 300;
+//   line-height: 23px;
+//   color: #000; }
+
+// #breadcrumbs span a {
+//   font-size: 14px;
+//   font-weight: 300;
+//   line-height: 23px;
+//   margin-right: 5px;
+//   color: #5E5E5E;
+//   text-decoration: underline; }
+
+// // Пагинация 1 ===============================================================================================================================================
+// .pagination {
+// 	justify-content: center;
+// 	// .pagination__nav-links
+// 	&__nav-links {
+// 		max-width: 500px;
+// 		width: 100%;
+// 		align-items: center;
+// 	}
+// 	// .pagination__back 
+// 	&__back {
+// 		max-width: 93.5px;
+// 		width: 100%;
+// 		height: 34px;
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+// 		font-size: 12px;
+// 		border: 0.4px solid #c7c9cb;
+// 		margin-right: 37px;
+// 		position: relative;
+// 		&:before {
+// 			content: "";
+// 			position: absolute;
+// 			top: 36%;
+// 			left: 10%;
+// 			width: 5px;
+// 			height: 10px;
+// 			background: url("../img/icons/pagination__back.svg");
+// 			background-repeat: no-repeat;
+// 		}
+// 	}
+// 	// .pagination__numbers
+// 	&__numbers {
+// 		margin-right: 20px;
+// 		font-size: 16px;
+// 	}
+// 	&__block-dot {
+// 		margin-right: 20px;
+// 		justify-content: space-between;
+// 		width: 30px;
+// 	}
+// 	// .pagination__dot
+// 	&__dot {
+// 		display: block;
+// 		font-size: 16px;
+// 	}
+// 	// .pagination__next
+// 	&__next {
+// 		max-width: 93.5px;
+// 		width: 100%;
+// 		height: 34px;
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+// 		font-size: 12px;
+// 		border: 0.4px solid #c7c9cb;
+// 		margin-left: 13px;
+// 		position: relative;
+// 		&:after {
+// 			content: "";
+// 			position: absolute;
+// 			top: 36%;
+// 			right: 10%;
+// 			width: 5px;
+// 			height: 10px;
+// 			background: url("../img/icons/pagination__next.svg");
+// 			background-repeat: no-repeat;
+// 		}
+// 	}
+// }
+// .current {
+// 	color: #d3820f;
+// }
+
+// // Пагинация 3 ===============================================================================================================================================
+// .pagging {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	// .pagging__arrow
+// 	&__arrow {
+// 	}
+// 	// .pagging__list
+// 	&__list {
+// 		display: flex;
+// 		li {
+// 		}
+// 	}
+// 	// .pagging__item
+// 	&__item {
+// 		&._active {
+// 		}
+// 	}
+// }
+
+
+// .pagging {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	// .pagging__arrow
+// 	&__arrow {
+// 	}
+// 	// .pagging__list
+// 	&__list {
+// 		display: flex;
+// 		li {
+// 		}
+// 	}
+// 	// .pagging__item
+// 	&__item {
+// 		&._active {
+// 		}
+// 	}
+// }

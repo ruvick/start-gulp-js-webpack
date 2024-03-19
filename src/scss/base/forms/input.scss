@@ -25,3 +25,34 @@ textarea.input {
 	resize: none;
 	padding: 0px 0px;
 }
+
+// Стилизация placeholder 
+::-webkit-input-placeholder {
+	color: #8584847a;
+}
+
+::-moz-placeholder {
+	color: #8584847a;
+}
+
+/* Firefox 19+ */
+:-moz-placeholder {
+	color: #8584847a;
+}
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+	color: #8584847a;
+}
+
+// Убираем стрелки у цифрового инпута
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { 
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0;
+	/* <-- Apparently some margin are still there even though it's hidden */
+}

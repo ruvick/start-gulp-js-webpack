@@ -2,6 +2,29 @@
 
 //====================================================================================================
 
+// Анимация header scroll
+.header {
+	@media (min-width: 1025px) {
+		transform: translateY(0);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transition: all 0.4s ease 0.1s;
+	}
+	&._header-scroll {
+		transform: translateY(-200%);
+		width: 100%;
+		background-color: #fff;
+		box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5);
+	}
+	&._header-show {
+		top: 0%;
+		transform: translateY(0);
+	}
+}
+//========================================================================================================================================================
+
 //Burger
 /*
 .icon-menu {

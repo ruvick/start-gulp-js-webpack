@@ -1,0 +1,48 @@
+[data-tippy] {
+	position: relative; /* Относительное позиционирование */ 
+	cursor: help; /* Меняем курсор на справочный */
+ }
+
+ [data-tippy]::after {
+	content: attr(data-tippy); /* Выводим текст из атрибута data-title */
+	position: absolute; /* Абсолютное позиционирование */
+	left: -20px; 
+	/* top: 1em;  */
+	bottom: 33px;
+	opacity: 0; /* Скрываем подсказку, делая её прозрачной */
+	transition: 0.5s; /* Время появления подсказки */
+	pointer-events: none; /* Подсказка не реагирует на курсор */
+	background-color: #fff;
+	border: 1px solid #221F20;
+	border-radius: 10px;
+	color: #000; /* Белый цвет текста */
+    min-width: 220px;
+	 font-size: 14px;
+	 line-height: 20px;
+	 padding: 6px 10px;
+ }
+
+ [data-tippy]::before {
+	content: '';
+	position: absolute;
+	top: -16px;
+	left: 65%;
+	margin-left: -8px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+	opacity: 0;
+	transition: 0.5s; /* Время появления подсказки */
+	pointer-events: none; /* Подсказка не реагирует на курсор */
+}
+
+@media (any-hover: hover){
+	[data-tippy]:hover::after {
+		opacity: 1; /* Показываем подсказку */
+	 }
+	 [data-tippy]:hover::before {
+		opacity: 1; /* Показываем подсказку */
+	 }
+}
+// Пример
+// <span abbr data-tippy="Текст подсказки" class="box-order__options-descp-tippy tooltip">Навести</span>

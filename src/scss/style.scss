@@ -144,3 +144,7 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+
+.about__title {
+	@include adaptiv-value("font-size", 31, 20, 1);
+}

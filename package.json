@@ -20,7 +20,7 @@
 	"devDependencies": {
 		"copy-webpack-plugin": "latest",
 		"css-loader": "latest",
-		"del": "latest",
+		"del": "^6.0.0",
 		"file-include-webpack-plugin-replace": "latest",
 		"gulp": "latest",
 		"gulp-autoprefixer": "latest",
